@@ -44,6 +44,7 @@ constructor(){
                         dateTime: "August 22 6:40 pm",
                         description: "Nulla sodales tincidunt laoreet. Suspendisse blandit aliquam volutpat. Proin non felis vestibulum, fringilla arcu sed, tempus dolor. Nullam malesuada lorem eget imperdiet ultricies. Nulla at sem sem. Vivamus semper malesuada ultricies. Suspendisse interdum imperdiet mauris, eu laoreet quam scelerisque commodo. Proin tincidunt ligula eget tellus fringilla tristique. Aliquam tellus lectus, vulputate sed dolor nec, ultrices feugiat quam. Vestibulum venenatis pellentesque nisi, ac congue velit varius id. Aenean maximus erat ante, faucibus interdum purus vestibulum ut. Duis a nulla turpis.",
                         location: "Miami, FL",
+                        meetupID: 1,
                         RSVPYes: [1,2,3],
                         RSVPNo: [2,5,6]
                             
@@ -54,6 +55,7 @@ constructor(){
                         dateTime: "August 22 6:40 pm",
                         description: "Nulla sodales tincidunt laoreet. Suspendisse blandit aliquam volutpat. Proin non felis vestibulum, fringilla arcu sed, tempus dolor. Nullam malesuada lorem eget imperdiet ultricies. Nulla at sem sem. Vivamus semper malesuada ultricies. Suspendisse interdum imperdiet mauris, eu laoreet quam scelerisque commodo. Proin tincidunt ligula eget tellus fringilla tristique. Aliquam tellus lectus, vulputate sed dolor nec, ultrices feugiat quam. Vestibulum venenatis pellentesque nisi, ac congue velit varius id. Aenean maximus erat ante, faucibus interdum purus vestibulum ut. Duis a nulla turpis.",
                         location: "Miami, FL",
+                        meetupID: 2,
                         RSVPYes: [1,2,3],
                         RSVPNo: [2,5,6]
                             
@@ -64,6 +66,7 @@ constructor(){
                         dateTime: "August 22 6:40 pm",
                         description: "Nulla sodales tincidunt laoreet. Suspendisse blandit aliquam volutpat. Proin non felis vestibulum, fringilla arcu sed, tempus dolor. Nullam malesuada lorem eget imperdiet ultricies. Nulla at sem sem. Vivamus semper malesuada ultricies. Suspendisse interdum imperdiet mauris, eu laoreet quam scelerisque commodo. Proin tincidunt ligula eget tellus fringilla tristique. Aliquam tellus lectus, vulputate sed dolor nec, ultrices feugiat quam. Vestibulum venenatis pellentesque nisi, ac congue velit varius id. Aenean maximus erat ante, faucibus interdum purus vestibulum ut. Duis a nulla turpis.",
                         location: "Miami, FL",
+                        meetupID: 3,
                         RSVPYes: [1,2,3],
                         RSVPNo: [2,5,6]
                             
@@ -74,6 +77,7 @@ constructor(){
                         dateTime: "August 22 6:40 pm",
                         description: "Nulla sodales tincidunt laoreet. Suspendisse blandit aliquam volutpat. Proin non felis vestibulum, fringilla arcu sed, tempus dolor. Nullam malesuada lorem eget imperdiet ultricies. Nulla at sem sem. Vivamus semper malesuada ultricies. Suspendisse interdum imperdiet mauris, eu laoreet quam scelerisque commodo. Proin tincidunt ligula eget tellus fringilla tristique. Aliquam tellus lectus, vulputate sed dolor nec, ultrices feugiat quam. Vestibulum venenatis pellentesque nisi, ac congue velit varius id. Aenean maximus erat ante, faucibus interdum purus vestibulum ut. Duis a nulla turpis.",
                         location: "Miami, FL",
+                        meetupID: 1,
                         RSVPYes: [1,2,3],
                         RSVPNo: [2,5,6]
                             
@@ -84,6 +88,7 @@ constructor(){
                         dateTime: "August 22 6:40 pm",
                         description: "Nulla sodales tincidunt laoreet. Suspendisse blandit aliquam volutpat. Proin non felis vestibulum, fringilla arcu sed, tempus dolor. Nullam malesuada lorem eget imperdiet ultricies. Nulla at sem sem. Vivamus semper malesuada ultricies. Suspendisse interdum imperdiet mauris, eu laoreet quam scelerisque commodo. Proin tincidunt ligula eget tellus fringilla tristique. Aliquam tellus lectus, vulputate sed dolor nec, ultrices feugiat quam. Vestibulum venenatis pellentesque nisi, ac congue velit varius id. Aenean maximus erat ante, faucibus interdum purus vestibulum ut. Duis a nulla turpis.",
                         location: "Miami, FL",
+                        meetupID: 2,
                         RSVPYes: [1,2,3],
                         RSVPNo: [2,5,6]
                             
@@ -94,6 +99,7 @@ constructor(){
                         dateTime: "August 22 6:40 pm",
                         description: "Nulla sodales tincidunt laoreet. Suspendisse blandit aliquam volutpat. Proin non felis vestibulum, fringilla arcu sed, tempus dolor. Nullam malesuada lorem eget imperdiet ultricies. Nulla at sem sem. Vivamus semper malesuada ultricies. Suspendisse interdum imperdiet mauris, eu laoreet quam scelerisque commodo. Proin tincidunt ligula eget tellus fringilla tristique. Aliquam tellus lectus, vulputate sed dolor nec, ultrices feugiat quam. Vestibulum venenatis pellentesque nisi, ac congue velit varius id. Aenean maximus erat ante, faucibus interdum purus vestibulum ut. Duis a nulla turpis.",
                         location: "Miami, FL",
+                        meetupID: 3,
                         RSVPYes: [1,2,3],
                         RSVPNo: [2,5,6]
                             
@@ -104,6 +110,7 @@ constructor(){
                         dateTime: "August 22 6:40 pm",
                         description: "Nulla sodales tincidunt laoreet. Suspendisse blandit aliquam volutpat. Proin non felis vestibulum, fringilla arcu sed, tempus dolor. Nullam malesuada lorem eget imperdiet ultricies. Nulla at sem sem. Vivamus semper malesuada ultricies. Suspendisse interdum imperdiet mauris, eu laoreet quam scelerisque commodo. Proin tincidunt ligula eget tellus fringilla tristique. Aliquam tellus lectus, vulputate sed dolor nec, ultrices feugiat quam. Vestibulum venenatis pellentesque nisi, ac congue velit varius id. Aenean maximus erat ante, faucibus interdum purus vestibulum ut. Duis a nulla turpis.",
                         location: "Miami, FL",
+                        meetupID: 1,
                         RSVPYes: [1,2,3],
                         RSVPNo: [2,5,6]
                             
@@ -114,6 +121,7 @@ constructor(){
                         dateTime: "August 22 6:40 pm",
                         description: "Nulla sodales tincidunt laoreet. Suspendisse blandit aliquam volutpat. Proin non felis vestibulum, fringilla arcu sed, tempus dolor. Nullam malesuada lorem eget imperdiet ultricies. Nulla at sem sem. Vivamus semper malesuada ultricies. Suspendisse interdum imperdiet mauris, eu laoreet quam scelerisque commodo. Proin tincidunt ligula eget tellus fringilla tristique. Aliquam tellus lectus, vulputate sed dolor nec, ultrices feugiat quam. Vestibulum venenatis pellentesque nisi, ac congue velit varius id. Aenean maximus erat ante, faucibus interdum purus vestibulum ut. Duis a nulla turpis.",
                         location: "Miami, FL",
+                        meetupID: 2,
                         RSVPYes: [1,2,3],
                         RSVPNo: [2,5,6]
                             
@@ -124,6 +132,7 @@ constructor(){
                         dateTime: "August 22 6:40 pm",
                         description: "Nulla sodales tincidunt laoreet. Suspendisse blandit aliquam volutpat. Proin non felis vestibulum, fringilla arcu sed, tempus dolor. Nullam malesuada lorem eget imperdiet ultricies. Nulla at sem sem. Vivamus semper malesuada ultricies. Suspendisse interdum imperdiet mauris, eu laoreet quam scelerisque commodo. Proin tincidunt ligula eget tellus fringilla tristique. Aliquam tellus lectus, vulputate sed dolor nec, ultrices feugiat quam. Vestibulum venenatis pellentesque nisi, ac congue velit varius id. Aenean maximus erat ante, faucibus interdum purus vestibulum ut. Duis a nulla turpis.",
                         location: "Miami, FL",
+                        meetupID: 3,
                         RSVPYes: [1,2,3],
                         RSVPNo: [2,5,6]
                             
