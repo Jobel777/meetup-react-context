@@ -5,6 +5,11 @@ import HomeJumbotron from '../component/HomeJumbotron.jsx';
 import EventOverview from '../component/EventOverview.jsx';
 import Footer from '../component/Footer.jsx';
 
+import { Link } from "react-router-dom";
+import { browserhistory } from "react-router";
+import PropTypes from 'prop-types';
+
+
 //create your first component
 export class MeetupHome extends React.Component{
     
@@ -16,8 +21,6 @@ export class MeetupHome extends React.Component{
                 <div className="container">
                     <div className="row">
                         <div className="col-md-8 mx-auto">
-                            <EventOverview />
-                            <EventOverview />
                             <EventOverview />
                         </div>
                     </div>

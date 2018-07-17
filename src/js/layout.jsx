@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, IndexRoute } from "react-router-dom";
 
 import {MeetupHome} from "./views/MeetupHome.jsx";
 import {MeetupGroup} from "./views/MeetupGroup.jsx";
@@ -159,103 +159,27 @@ constructor(){
                   .then(data => this.setState({ meetups: data }))
                   .catch(error => console.log(error));
               },
-              "changeEvent": () => {
-                this.setState({events: this.state.events.map( (event, i) => {
-                    if(i === 0){  
-                      event.post_title = "HOLA";
-                    }
-                    return event;
-                  })
-                });
-              },
-              "rsvpEvent": (id, userId, answer, token) => {
-                
-                /*ReactGA.event({
-                  category: 'User',
-                  action: 'RSVP',
-                  value: answer === "yes" ? 1 : 0
-                });*/
-                
-                var data = {
-                  user: userId,
-                  answer: answer
-                };
-                
-                fetch('https://wordpress-breathecode-cli-nachovz.c9users.io/wp-json/sample_api/v1/events/rsvp/'+id, 
-                {
-                  method: 'PUT',
-                  body: JSON.stringify(data),
-                  headers: new Headers({
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer '+token
-                    })
-                })
-                .then(data => {
-                  if (data.status !== 200 ) {
-                    if(data.status === 403){
-                      //this.dispatch('MeetupStore.endSession');
-                    }
-                    
-                    throw new Error(data);
-                  }
-                  this.actions.loadInitialData();
-                })
-                .catch(error => console.log(error));
-              },
-              "loadSession": (username, password) => {
-                //REST API AUTH
-                var data = {
-                    "username":username, 
-                    "password":password
-                  };
-                  
-                fetch('https://wordpress-breathecode-cli-nachovz.c9users.io/wp-json/jwt-auth/v1/token',
-                {
-                  method: 'POST',
-                  body: JSON.stringify(data),
-                  headers: new Headers({
-                    'Content-Type': 'application/json'
-                    })
-                })
-                .then( (response) => response.json())
-                .then( (data) => {
-                    
-                    if (typeof(data.token) === "undefined" ) throw new Error(data.message);
-                    
-                    //this.dispatch('MeetupStore.setSession', data); 
-                    //this.loadApiEvents(data.token);
-                    //this.loadInitialData();
-                    this.setState({session: data});
-                    //ReactGA.set({ userId: data.user_nicename });
-                })
-                .catch(error => console.log(error));
-              
-                //Simulating user ID
-                /*
-                fetch('https://randomuser.me/api/?inc=id,name,picture')
-                .then(res => res.json())
-                .catch(error => {
-                  //console.error('Error:', error)
-                })
-                .then(response => {
-                  this.dispatch('MeetupStore.setSession', response);
-                });*/
-              },
               "logout": () => this.setState({session: {}})
     };        
-        
 }
+
+    componentDidMount() {
+      this.actions.loadInitialData();
+      }
+      
+      
   render() {
     return (
         <React.Fragment>
             <BrowserRouter>
                 <Switch>
-                    <Provider value={{state:this.state}}>   
+                    <Provider value={{state:this.state, actions: this.actions}}>  
                         <Route exact path="/" component={MeetupHome} />
-                        <Route path="/group" component={MeetupGroup} />
-                        <Route path="/event" component={MeetupEvent} />
-                        <Route render={() => <h1>Not found!</h1>} />
+                        <Route exact path="/home" component={MeetupHome} />
+                        <Route exact path="/event/:theid" component={MeetupEvent} />
+                        <Route exact path="/group/:theid" component={MeetupGroup} />
                     </Provider>
+                    <Route render={() => <h1>Not found!</h1>} />
                 </Switch>
             </BrowserRouter>
         </React.Fragment>
