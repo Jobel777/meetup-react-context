@@ -164,7 +164,7 @@ constructor(){
 }
 
     componentDidMount() {
-      this.actions.loadInitialData();
+            this.actions.loadInitialData();
       }
       
       
