@@ -2,8 +2,6 @@ import React from 'react';
 
 import {Consumer} from "../stores/AppContext.jsx";
 import moment from 'moment';
-import t from 'typy';
-
 import { Link } from "react-router-dom";
 import { browserhistory } from "react-router";
 import $ from "jquery";
@@ -35,7 +33,7 @@ function EventOverview(props){
                                 {/*<p><Link to={"/group/"+event.ID}>Meetup {((event || {}).meta_keys || {})._meetup}</Link></p>*/}
                                 {/*<p><Link to={"/group/"+event.ID}>Meetup {getNestedObject(event, ['meta_keys', '_meetup'])}</Link></p>*/}
                                 {/*<p><Link to={"/group/"+event.ID}>Meetup {getNestedObject(event, ['meta_keys', '_rsvpYes', 0])}</Link></p>*/}
-                                <p><Link to={"/group/"+event.ID}>Meetup {t(event, 'meta_keys._rsvpYes[1]').safeObject}</Link></p>
+                                <p><Link to={"/group/"+event.ID}>Meetup {(event, 'meta_keys._rsvpYes[1]').safeObject}</Link></p>
                             </div>
                         </div>
                     </div>);}))} 
