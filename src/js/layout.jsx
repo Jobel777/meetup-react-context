@@ -6,9 +6,6 @@ import {MeetupGroup} from "./views/MeetupGroup.jsx";
 import {MeetupEvent} from "./views/MeetupEvent.jsx";
 import {Provider} from "./stores/AppContext.jsx";
 
-
-
-
 export default class Layout extends React.Component {
 
 constructor(){
@@ -148,7 +145,44 @@ constructor(){
         };
         
     this.actions = {
-              "loadInitialData": () => {
+            "loadSession": (receivedUsername, receivedPassword) => {
+                /*this.setState(
+                    {
+                        session: {
+                            ID: 1000,
+                            user_nicename: receivedUsername,
+                            password: receivedPassword,
+                            token: "gfdrtu6545hftydhgrhxfh"
+                        }
+                        
+                    });*/
+                    //REST API AUTH
+                    var data = {
+                        "username":receivedUsername, 
+                        "password":receivedPassword
+                      };
+                      
+                    fetch('https://wordpress-breathecode-cli-nachovz.c9users.io/wp-json/jwt-auth/v1/token',
+                    {
+                      method: 'POST',
+                      body: JSON.stringify(data),
+                      headers: new Headers({
+                        'Content-Type': 'application/json'
+                        })
+                    })
+                    .then( (response) => response.json())
+                    .then( (data) => {
+                        
+                        if (typeof(data.token) === "undefined" ) throw new Error(data.message);
+                        this.setState({session: data});
+                        
+                        //ReactGA.set({ userId: data.user_nicename });
+                    })
+                    .catch(error => console.log(error));
+                    
+                    
+                  },
+            "loadInitialData": () => {
                 fetch('https://wordpress-breathecode-cli-nachovz.c9users.io/wp-json/sample_api/v1/events')
                   .then(response => response.json())
                   .then(data => this.setState({ events: data, isLoading: false }))
@@ -176,13 +210,14 @@ constructor(){
                 .then(data => this.setState({ session: data }))
                 .catch(error => console.log(error));
               },
-              "logout": () => this.setState({session: {}})
+            "logout": () => this.setState({session: {}})
     };        
 }
 
     componentDidMount() {
             this.actions.loadInitialData();
       }
+<<<<<<< HEAD
       
     render() {
         return (
@@ -201,4 +236,27 @@ constructor(){
             </React.Fragment>
         );
     }
+=======
+    
+    //*Start copy and past ot Nacho's layout.jsx load session data *// 
+        
+      
+  render() {
+    return (
+        <React.Fragment>
+            <BrowserRouter>
+                <Switch>
+                    <Provider value={{state:this.state, actions: this.actions}}>  
+                        <Route exact path="/" component={MeetupHome} />
+                        <Route exact path="/home" component={MeetupHome} />
+                        <Route exact path="/event/:theid" component={MeetupEvent} />
+                        <Route exact path="/group/:theid" component={MeetupGroup} />
+                    </Provider>
+                    <Route render={() => <h1>Not found!</h1>} />
+                </Switch>
+            </BrowserRouter>
+        </React.Fragment>
+    );
+  }
+>>>>>>> 88bf5a70d8f22f07f85c28b40ff78e3ec7c84494
 }
