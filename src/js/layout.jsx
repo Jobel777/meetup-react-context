@@ -13,7 +13,7 @@ constructor(){
     
     
         this.state = {
-            "meetups":[
+            "meetups":[/*
                 {
                         ID:1,
                         name: "Coding Meetup",
@@ -32,7 +32,7 @@ constructor(){
                         description: "Aliquam vitae ex laoreet, sagittis eros nec, blandit tellus. Proin dignissim dui a egestas accumsan. Aenean ut turpis at arcu pellentesque aliquet non sed ipsum. Donec in nibh eget metus facilisis vestibulum in eget magna. Sed id ex volutpat, dignissim felis vitae, tempus massa ",
                         listOfEvents: [3,6,9]
                 }
-            ],
+            */],
                 
             "events":[/*
                 {
@@ -217,7 +217,6 @@ constructor(){
     componentDidMount() {
             this.actions.loadInitialData();
       }
-<<<<<<< HEAD
       
     render() {
         return (
@@ -236,27 +235,4 @@ constructor(){
             </React.Fragment>
         );
     }
-=======
-    
-    //*Start copy and past ot Nacho's layout.jsx load session data *// 
-        
-      
-  render() {
-    return (
-        <React.Fragment>
-            <BrowserRouter>
-                <Switch>
-                    <Provider value={{state:this.state, actions: this.actions}}>  
-                        <Route exact path="/" component={MeetupHome} />
-                        <Route exact path="/home" component={MeetupHome} />
-                        <Route exact path="/event/:theid" component={MeetupEvent} />
-                        <Route exact path="/group/:theid" component={MeetupGroup} />
-                    </Provider>
-                    <Route render={() => <h1>Not found!</h1>} />
-                </Switch>
-            </BrowserRouter>
-        </React.Fragment>
-    );
-  }
->>>>>>> 88bf5a70d8f22f07f85c28b40ff78e3ec7c84494
 }
