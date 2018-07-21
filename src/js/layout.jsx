@@ -37,7 +37,7 @@ constructor(){
                 }
             ],
                 
-            "events":[
+            "events":[/*
                 {
                         ID:1,
                         name: "Coding Weekend",
@@ -137,12 +137,12 @@ constructor(){
                         RSVPNo: [2,5,6]
                             
                 }
-            ],
+            */],
             "session":{
-                ID:1,
+                /*ID:1,
                 username:"theUser",
                 password: "1234",
-                token: "qwerty12345abcdefgzxcv"
+                token: "qwerty12345abcdefgzxcv"*/
             },
             "isLoading": true
         };
@@ -158,6 +158,23 @@ constructor(){
                   .then(response => response.json())
                   .then(data => this.setState({ meetups: data }))
                   .catch(error => console.log(error));
+                  
+                fetch("https://wordpress-breathecode-cli-nachovz.c9users.io/wp-json/jwt-auth/v1/token", {
+                    method: "post",
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                        },
+
+                    //make sure to serialize your JSON body
+                    body: JSON.stringify({
+                    "username": "group2",
+                    "password": "1234"
+                    })
+                    })
+                .then( (response) => response.json())
+                .then(data => this.setState({ session: data }))
+                .catch(error => console.log(error));
               },
               "logout": () => this.setState({session: {}})
     };        
@@ -167,22 +184,21 @@ constructor(){
             this.actions.loadInitialData();
       }
       
-      
-  render() {
-    return (
-        <React.Fragment>
-            <BrowserRouter>
-                <Switch>
-                    <Provider value={{state:this.state, actions: this.actions}}>  
-                        <Route exact path="/" component={MeetupHome} />
-                        <Route exact path="/home" component={MeetupHome} />
-                        <Route exact path="/event/:theid" component={MeetupEvent} />
-                        <Route exact path="/group/:theid" component={MeetupGroup} />
-                    </Provider>
-                    <Route render={() => <h1>Not found!</h1>} />
-                </Switch>
-            </BrowserRouter>
-        </React.Fragment>
-    );
-  }
+    render() {
+        return (
+            <React.Fragment>
+                <BrowserRouter>
+                    <Switch>
+                        <Provider value={{state:this.state, actions: this.actions}}>  
+                            <Route exact path="/" component={MeetupHome} />
+                            <Route exact path="/home" component={MeetupHome} />
+                            <Route exact path="/event/:theid" component={MeetupEvent} />
+                            <Route exact path="/group/:theid" component={MeetupGroup} />
+                        </Provider>
+                        <Route render={() => <h1>Not found!</h1>} />
+                    </Switch>
+                </BrowserRouter>
+            </React.Fragment>
+        );
+    }
 }

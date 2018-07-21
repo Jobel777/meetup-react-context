@@ -15,13 +15,33 @@ import Footer from '../component/Footer.jsx';
 //create your first component
 export class MeetupEvent extends React.Component{
     
+    constructor(props) {
+        super(props);
+        }
+        
+    sendParametersDinamyc() {
+        if (this.props.groupId !== undefined) {
+            console.log('groupId '+this.props.groupId);
+            let parameter = "groupId={this.props.groupId}";
+            return parameter;
+            }
+        else {
+            console.log('eventId '+this.props.match.params.theid);
+            let parameter = 'eventId={this.props.match.params.theid}';
+            return parameter;
+        }
+    }
+        
     render(){
+        
+
+            
         return (
             <React.Fragment>
            
                 <TopBar />
                 <EventJumbotron />
-                <EventDetails eventId={this.props.match.params.theid} />
+                <EventDetails sendParametersDinamyc />
                 <Footer />
       
             </React.Fragment>
@@ -29,6 +49,10 @@ export class MeetupEvent extends React.Component{
         );
     }
 }
+
+MeetupEvent.propTypes = {
+    groupId: PropTypes.number
+    };
 
 MeetupEvent.propTypes = {
     match: PropTypes.object

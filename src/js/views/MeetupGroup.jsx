@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Link } from "react-router-dom";
 import { browserhistory } from "react-router";
+import PropTypes from 'prop-types';
 
 import TopBar from '../component/TopBar.jsx';
 import GroupJumbotron from '../component/GroupJumbotron.jsx';
@@ -20,7 +21,7 @@ export class MeetupGroup extends React.Component{
                     <div className="row">
                         <div className="col-md-8 mx-auto">
                             <h4>Next Events</h4>
-                            <EventOverview />
+                            <EventOverview groupId={this.props.match.params.theid}/>
                         </div>
                     </div>
                 </div>
@@ -29,3 +30,6 @@ export class MeetupGroup extends React.Component{
         );
     }
 }
+MeetupGroup.propTypes = {
+    match: PropTypes.object
+    };
