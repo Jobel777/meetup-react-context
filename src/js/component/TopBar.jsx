@@ -74,8 +74,13 @@ render(){
                                             <input type="text" name="user" value={this.state.user} placeholder="Username" onChange={(e) => this.setState({username: e.target.value})} />
                                             <input type="password" name="password" id="passinput"value={this.state.password} placeholder="Password" onChange={(e) => this.setState({password: e.target.value})} />
                                         </div>
-                                        <input type="submit" value="Login" id="loginb"/>
+                                        <button className="btn btn-primary" type="submit" id="loginb">Login</button>
                                     </form>
+                                    <div className="checkbox">
+                                        <label className="small">
+                                            <input className="Remember mr-1" type="checkbox"/>Remember me
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -91,4 +96,4 @@ TopBar.propTypes = {
   currentView: PropTypes.string
 };
 
-                        
+
