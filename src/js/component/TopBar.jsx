@@ -30,6 +30,10 @@ render(){
             return (
                 <div>
                     <nav className="navbar navbar-nav navbar-expand-sm bg-dark d-flex justify-content-between pl-3">
+                        <Link to={"/"} className="nav-item text-left">
+                            <img src="https://www.4geeksacademy.co/wp-content/themes/the-fastest/assets/img/logo-black.png" id="logo1"/>
+                        </Link>
+                        
                         {
                                     session && typeof(session.user_nicename) !== 'undefined' ?
                                         
@@ -50,9 +54,7 @@ render(){
                                             data-target="#exampleModal">Login</button>
                                 }
         
-                        <Link to={"/"} className="nav-item text-left">
-                            <img src="https://www.4geeksacademy.co/wp-content/themes/the-fastest/assets/img/logo-black.png" id="logo1"/>
-                        </Link>
+                        
                     </nav>
                     <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div className="modal-dialog" role="document">
