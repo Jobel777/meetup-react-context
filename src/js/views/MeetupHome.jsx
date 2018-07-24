@@ -21,7 +21,7 @@ export class MeetupHome extends React.Component{
                 <div className="container">
                     <div className="row">
                         <div className="col-md-8 mx-auto">
-                            <EventOverview />
+                            <EventOverview groupId={undefined} />
                         </div>
                     </div>
                 </div>
@@ -30,3 +30,7 @@ export class MeetupHome extends React.Component{
         );
     }
 }
+
+MeetupHome.propTypes = {
+    match: PropTypes.object
+    };

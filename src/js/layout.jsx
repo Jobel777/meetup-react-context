@@ -209,6 +209,24 @@ constructor(){
                 .then( (response) => response.json())
                 .then(data => this.setState({ session: data }))
                 .catch(error => console.log(error));
+                 
+                fetch("https://wordpress-breathecode-cli-nachovz.c9users.io/wp-json/sample_api/v1/events/rsvp/36", {
+                    method: "put",
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                        },
+
+                    //make sure to serialize your JSON body
+                    body: JSON.stringify({
+                    "username": "group2",
+                    "password": "1234"
+                    })
+                    })
+                .then( (response) => response.json())
+                .then(data => this.setState({ session: data }))
+                .catch(error => console.log(error));
+                
               },
             "logout": () => this.setState({session: {}})
     };        

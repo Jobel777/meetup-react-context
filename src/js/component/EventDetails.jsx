@@ -31,9 +31,9 @@ export default class EventDetails extends React.Component {
         <div>
             <Consumer>
                 {
-                ({ state, actions }) => {   const event = state.meetups.find( event => event.ID === parseInt(this.props.eventId) );
+                ({ state, actions }) => {   const event = state.events.find( event => event.ID === parseInt(this.props.eventId) );
                             if (!event) {
-                                return <div>Vacio</div>;
+                                return <div>Erros, Contact to Administrator</div>;
                             } else {
 
                             return (

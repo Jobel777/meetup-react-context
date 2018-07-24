@@ -11,7 +11,7 @@ function GroupJumbotron(props){
                         <img className="img-fluid" src="http://via.placeholder.com/600x350" />
                     </div>
                     <div className="col-md-6 px-4">
-                        <h3>Meetup 1</h3>
+                        <h3>Meetup {props.groupId}</h3>
                         <p className="my-1"><small className="text-muted">Location</small></p>
                         <p>Miami, FL</p>
                     </div>
@@ -20,10 +20,10 @@ function GroupJumbotron(props){
         </div>
         );
 }
-
-/*BlogJumbotron.propTypes = {
-        title: PropTypes.string,
-        subHeadline: PropTypes.string
-    };*/
-
 export default GroupJumbotron;
+
+GroupJumbotron.propTypes = {
+        groupId: PropTypes.string
+    };
+
+

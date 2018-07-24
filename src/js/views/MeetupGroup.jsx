@@ -16,7 +16,7 @@ export class MeetupGroup extends React.Component{
         return (
             <React.Fragment>
                 <TopBar />
-                <GroupJumbotron />
+                <GroupJumbotron groupId={this.props.match.params.theid} />
                 <div className="container">
                     <div className="row">
                         <div className="col-md-8 mx-auto">
